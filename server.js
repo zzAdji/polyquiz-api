@@ -4,6 +4,7 @@ const cors       = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes");
+const gameRoutes = require("./routes/gameRoutes");
 
 const app        = express();
 const PORT       = process.env.PORT       || 5000;
@@ -35,6 +36,7 @@ app.get("/api/ping", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api", gameRoutes);
 
 app.listen(PORT, () => {
     console.log(`Le serveur tourne sur http://localhost:${PORT}`);
