@@ -21,7 +21,7 @@ if (!process.env.JWT_SECRET) {
 }
 
 app.use(express.json());
-app.use(cors({ origin: CLIENT_URL }));
+app.use(cors());
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log("MongoDB connecté"))
